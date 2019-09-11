@@ -1,11 +1,48 @@
 import React from 'react';
+import ApolloClient from 'apollo-boost';
+import { gql } from 'apollo-boost'
+
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+
 import './App.css';
 import Nav from './components/Nav';
 import About from './components/About';
 import Countries from './components/Countries';
 import Country from './components/Country';
 
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+const client = new ApolloClient({
+  uri: 'https://countries.trevorblades.com/'
+});
+
+client.query({
+  query: gql`
+  {
+    country(code: "KE"){
+        code,
+        name,
+        native,
+        phone,
+        currency,
+        emoji,
+        emojiU,
+        continent {
+          code,
+          name, 
+          countries {
+            name,
+            code
+          }
+        },
+        languages {
+          code,
+          name,
+          native
+        }
+      }
+  }
+  `
+})
+      .then(result => console.log(result))
 
 function App() {
   return (
