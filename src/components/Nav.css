@@ -1,0 +1,28 @@
+.app-logo {
+    font-weight: 800;
+    font-size: 7vh;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    min-height: 10vh;
+    max-height: 11vh;
+    background: rgb(70, 79, 82);
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+.nav-links {
+    list-style-type: none;
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.nav-links-item {
+    font-weight: 400;
+    font-size: 3vh;
+}
