@@ -1,14 +1,13 @@
 .app-logo {
-    font-weight: 900;
-    font-size: 7vh;
+    font-weight: bold;
+    vertical-align: middle;
+    font-size: 50px;
+    margin: 0 30px;
 }
 
 nav {
     display: flex;
-    justify-content: space-around;
-    align-content: center;
-    min-height: 10vh;
-    max-height: 11vh;
+    flex-direction: column;
     background: rgb(70, 79, 82);
     width: 100%;
     margin-bottom: 5px;
@@ -23,6 +22,6 @@ nav {
 }
 
 .nav-links-item {
-    font-weight: 400;
-    font-size: 3vh;
+    font-size: 1em;
+    margin-top: 10px;
 }
