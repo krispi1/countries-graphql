@@ -20,7 +20,7 @@ const FETCH_COUNTRIES = gql`
     }
   }
 }
-`; // FETCH_COUNTRIES
+`; // end FETCH_COUNTRIES query
 
 const loadingStyle = {
   display: 'flex',
@@ -35,7 +35,10 @@ const loadingStyle = {
 }
 
 function GetCountries() {
+
+  // Destructure the useQuery function results
   const { loading, error, data } = useQuery(FETCH_COUNTRIES);
+  
   if (loading) {
     return <div style={loadingStyle}> 
         <img src={spinner} alt="Loading Spinner" /> 
@@ -70,8 +73,8 @@ let flagSize = "/32.png"; // Sizes: 16, 24, 32, 64
             <th>Continent</th>
             <th>Language</th>
             <th>Native</th>
-            <th>Currency</th>
             <th>Phone</th>
+            <th>Currency</th>
           </tr>
         </thead>
             
@@ -88,17 +91,21 @@ let flagSize = "/32.png"; // Sizes: 16, 24, 32, 64
                 <tr>
                   <td>{country.name}</td>
                   <td>{country.code}</td>
+                  
                   {/* Image alt name is important for accessibility purposes */}
                   <td><img src={flagUrl} alt={`${country.name} flag`}/></td>
                   <td>{country.continent.name}</td>
+
+                  {/* Loop through languages array and access 
+                  each object's properties */}
                   <td>{country.languages.map(
                     language => (`${language.name} `)
                   )}</td>
                   <td>{country.languages.map(
                     language => (`${language.native} `)
                   )}</td>
-                  <td>{country.currency}</td>
                   <td>{country.phone}</td>
+                  <td>{country.currency}</td>
                 </tr>
               </tbody>
             }
@@ -106,7 +113,8 @@ let flagSize = "/32.png"; // Sizes: 16, 24, 32, 64
         }     
       </table>
     </div>
-  );
+
+  ); // end return()
   
 } // end GetCountries
 
