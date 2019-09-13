@@ -53,11 +53,11 @@ function App() {
           <Switch>
             <Route path="/" exact component={Home} />
             <Route path="/about" component={About} />
-            <Route path="/countries" component={GetCountries} />
+            <Route path="/countries" exact component={GetCountries} />
             {/* <Route path="/countries/:id" component={GetCountry} /> */}
+          {<GetCountries />}
           </Switch>
           {/* GetCountry /> */}
-          {<GetCountries />}
         </div>
       </Router>
     </ApolloProvider>
