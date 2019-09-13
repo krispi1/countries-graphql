@@ -2,3 +2,17 @@
   text-align: center;
 }
 
+.tabl-row :hover {
+  color: yellow;
+  background-color: black;
+}
+
+.table-head {
+  color: rgba(0, 201, 201, 0.767);
+  background-color: rgba(33, 0, 54, 0.932);
+}
+
+.table-head :hover {
+  color: rgba(0, 201, 201, 0.767);
+  background-color: rgba(33, 0, 54, 0.932);
+}
