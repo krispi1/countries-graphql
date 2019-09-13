@@ -1,23 +1,24 @@
 import React from 'react';
-import ApolloClient from 'apollo-boost';
-import { gql } from 'apollo-boost'
-
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import ApolloClient from 'apollo-boost';
+import { ApolloProvider } from '@apollo/react-hooks';
 
 import './App.css';
 import Nav from './components/Nav';
 import About from './components/About';
-import Countries from './components/Countries';
-import Country from './components/Country';
+import GetCountries from './components/Countries';
+//import GetCountry from './components/Country';
 
 const client = new ApolloClient({
   uri: 'https://countries.trevorblades.com/'
 });
 
-client.query({
-  query: gql`
-  {
-    country(code: "KE"){
+/* // Trial data fetch -- turns out successful
+client
+  .query({
+    query: gql`
+    {
+      country(code: "KE"){
         code,
         name,
         native,
@@ -39,24 +40,27 @@ client.query({
           native
         }
       }
-  }
-  `
-})
-      .then(result => console.log(result))
+    }
+    `
+}).then(result => console.log("result")) */
 
 function App() {
   return (
-    <Router>
+    <ApolloProvider client={client}>
+      <Router>
       <Nav />
-      <div className="App">
-        <Switch>
-          <Route path="/" exact component={Home} />
-          <Route path="/about" component={About} />
-          <Route path="/countries" component={Countries} />
-          <Route path="/countries/:id" component={Country} />
-        </Switch>
-      </div>
-    </Router>
+        <div className="container">
+          <Switch>
+            <Route path="/" exact component={Home} />
+            <Route path="/about" component={About} />
+            <Route path="/countries" component={GetCountries} />
+            {/* <Route path="/countries/:id" component={GetCountry} /> */}
+          </Switch>
+          {/* GetCountry /> */}
+          {<GetCountries />}
+        </div>
+      </Router>
+    </ApolloProvider>
   );
 
 } // end App()
@@ -78,7 +82,7 @@ export default App;
 
 This task is for demonstrating your understanding of HTML, CSS, Javascript, React & related libraries.
 
-If you’re doing the front-end only, you must use the .
+If you’re doing the front-end only, you must use the https://countries.trevorblades.com endpoint for GraphQL API.
 
 Preferred libraries:
   1. `styled-components` for styling
@@ -87,15 +91,15 @@ Preferred libraries:
 
 Instructions:
 
-1. Create a `create-react-app` repo.
+1. Create a `create-react-app` repo. ------completed
 2. Add a router with routes:
-  - `/` - for displaying basic links for the other routes
-  - `/countries` - for requesting GraphQL API and rendering the list
-  - `/countries/(:code)` - for requesting GraphQL API and rendering the properties of a continent
+  - `/` - for displaying basic links for the other routes ------incomplete
+  - `/countries` - for requesting GraphQL API and rendering the list ------completed
+  - `/countries/(:code)` - for requesting GraphQL API and rendering the properties of a continent ------incomplete
 3. Design is totally by you.
-4. Countries list at `/countries` must contain the list of countries and the languages spoken in that country. 
-   Both in English and native languages. It should also contain the continent it is located in.
-5. `/countries/(:code)` must render the currency and a area code (phone) of that country.
-6. Routes must be fully loadable with a direct link. `/countries/CI` must render the page for Ivory Coast, for example.
+4. Countries list at `/countries` must contain the list of countries and the languages spoken in that country. ------completed
+   Both in English and native languages. It should also contain the continent it is located in. ------completed
+5. `/countries/(:code)` must render the currency and a area code (phone) of that country. ------incomplete
+6. Routes must be fully loadable with a direct link. `/countries/CI` must render the page for Ivory Coast, for example. ------incomplete
 7. End. 
 */
