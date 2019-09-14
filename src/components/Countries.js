@@ -22,7 +22,7 @@ const FETCH_COUNTRIES = gql`
 }
 `; // end FETCH_COUNTRIES query
 
-const loadingStyle = {
+export const loadingStyle = {
   display: 'flex',
   justifyContent: 'space-around',
   backgroundColor: 'black',
@@ -34,8 +34,10 @@ const loadingStyle = {
   width: '80%',
 }
 
-function GetCountries() {
+let flagUrl = '';
 
+function GetCountries() {
+  
   // Destructure the useQuery function results
   const { loading, error, data } = useQuery(FETCH_COUNTRIES);
   
@@ -48,23 +50,22 @@ function GetCountries() {
   }
   if (error) return <p>Error: Error fetching data.{console.log(error)} </p>;
 
-// Pull out countries array from the data object
-const countries = data.countries;  
+  // Pull out countries array from the data object
+  const countries = data.countries;  
 console.log(typeof countries);
 console.log(`-------countries-------`);
 console.log(countries[0]); // Inspect first country
 console.log(`-------countries-------`);
 
-let flagUrl = '';
 let flagBaseUrl = "https://www.countryflags.io/";
 let flagStyle = "/flat"; // Either flat or shiny
 let flagSize = "/32.png"; // Sizes: 16, 24, 32, 64
 
-  return (
+return (
     <div >
       <table 
-        className="table table-hover table-striped table-dark tabl-row"
-      >
+        className="table table-striped table-dark tabl-row"
+        >
         <thead className="table-head">
           <tr>
             <th>Country</th>
@@ -81,14 +82,14 @@ let flagSize = "/32.png"; // Sizes: 16, 24, 32, 64
         {
           // Loop through all the countries
           countries.map(country => {
-
+            
             // Grab the country code of each country
             let flagCode = country.code;
             // Generate custom url for each country's flag
             flagUrl = `${flagBaseUrl}${flagCode}${flagStyle}${flagSize}`;
-
+            
             return <tbody key={`${country.code}${country.name}`}>
-                <tr>
+                <tr onClick={() => onClickHandler(country)}>
                   <td>{country.name}</td>
                   <td>{country.code}</td>
                   
@@ -103,20 +104,25 @@ let flagSize = "/32.png"; // Sizes: 16, 24, 32, 64
                   )}</td>
                   <td>{country.languages.map(
                     language => (`${language.native} `)
-                  )}</td>
+                    )}</td>
                   <td>{country.phone}</td>
                   <td>{country.currency}</td>
                 </tr>
               </tbody>
             }
-          )
-        }     
+            )
+          }     
       </table>
     </div>
 
-  ); // end return()
-  
+  ); // end return
+
 } // end GetCountries
+
+function onClickHandler(country) {
+  console.log("do nothing");
+  console.log(country);
+} 
 
 export default GetCountries;
 
