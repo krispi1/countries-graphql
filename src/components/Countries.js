@@ -1,7 +1,10 @@
 import React from 'react';
 import { gql } from 'apollo-boost'
 import { useQuery } from '@apollo/react-hooks';
-import spinner from '../assets/rotatingGlobe200w.webp';
+import { withRouter } from 'react-router-dom'
+import Loading from './Loading';
+import Error from '../components/Error';
+import { flagBaseUrl, flagStyle, flagSize } from '../assets/flags';
 
 const FETCH_COUNTRIES = gql`
 {
@@ -22,46 +25,34 @@ const FETCH_COUNTRIES = gql`
 }
 `; // end FETCH_COUNTRIES query
 
-export const loadingStyle = {
-  display: 'flex',
-  justifyContent: 'space-around',
-  backgroundColor: 'black',
-  margin: '0 auto',
-  marginTop: '30px',
-  color: 'cyan',
-  fontSize: '2em',
-  height: '50%',
-  width: '80%',
-}
-
-let flagUrl = '';
-
-function GetCountries() {
+function GetCountries(props) {
   
-  // Destructure the useQuery function results
+  const { history } = props;
+  // console.log(history); // For debugging
+  
+  // Navigate to a given country's page upon clicking on it
+  const onClickHandler = function (country) {
+    history.push(`/countries/${country.code}`);
+  } // end onClickHandler()
+  
+  // Destructure the useQuery fetch results
   const { loading, error, data } = useQuery(FETCH_COUNTRIES);
   
-  if (loading) {
-    return <div style={loadingStyle}> 
-        <img src={spinner} alt="Loading Spinner" /> 
-        <br/><br/>
-        Loading....<br/>
-      </div>;
-  }
-  if (error) return <p>Error: Error fetching data.{console.log(error)} </p>;
+  if (loading) return <Loading />;
+
+  if (error) return <Error />;
 
   // Pull out countries array from the data object
   const countries = data.countries;  
-console.log(typeof countries);
-console.log(`-------countries-------`);
-console.log(countries[0]); // Inspect first country
-console.log(`-------countries-------`);
+  
+  /* // For debugging
+  console.log(typeof countries);
+  console.log(`-------countries-------`);
+  console.log(countries[0]); // Inspect first country
+  console.log(`-------countries-------`);
+ */
 
-let flagBaseUrl = "https://www.countryflags.io/";
-let flagStyle = "/flat"; // Either flat or shiny
-let flagSize = "/32.png"; // Sizes: 16, 24, 32, 64
-
-return (
+  return (
     <div >
       <table 
         className="table table-striped table-dark tabl-row"
@@ -78,18 +69,21 @@ return (
             <th>Currency</th>
           </tr>
         </thead>
-            
+        
         {
           // Loop through all the countries
           countries.map(country => {
-            
+ 
             // Grab the country code of each country
             let flagCode = country.code;
             // Generate custom url for each country's flag
-            flagUrl = `${flagBaseUrl}${flagCode}${flagStyle}${flagSize}`;
-            
-            return <tbody key={`${country.code}${country.name}`}>
-                <tr onClick={() => onClickHandler(country)}>
+            let flagUrl = `${flagBaseUrl}${flagCode}${flagStyle}${flagSize}`;
+
+            return (
+              <tbody key={`${country.code}${country.name}`}>
+              
+                <tr onClick={ () => onClickHandler(country)}>
+              
                   <td>{country.name}</td>
                   <td>{country.code}</td>
                   
@@ -107,11 +101,14 @@ return (
                     )}</td>
                   <td>{country.phone}</td>
                   <td>{country.currency}</td>
+                
                 </tr>
               </tbody>
-            }
-            )
-          }     
+
+            )// end return
+
+          }) // end countries.map
+        } 
       </table>
     </div>
 
@@ -119,12 +116,8 @@ return (
 
 } // end GetCountries
 
-function onClickHandler(country) {
-  console.log("do nothing");
-  console.log(country);
-} 
-
-export default GetCountries;
+/* return <Link to={`/countries/${country.code.toUpperCase()}`}> </Link> */
+export default withRouter(GetCountries);
 
 /** Countries Instructions
  * 
