@@ -88,7 +88,7 @@ function About() {
         </tbody>
       </table>
       <Link to="/">
-        <button style={style.buttonStyle}>GO HOME</button>
+        <button style={style.buttonStyle}>HOME</button>
       </Link>
       <Link to="/countries">
         <button style={style.buttonStyle}>COUNTRIES</button>

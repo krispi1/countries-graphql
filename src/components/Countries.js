@@ -34,7 +34,7 @@ function GetCountries(props) {
   // Navigate to a given country's page upon clicking on it
   const onClickHandler = function (country) {
     history.push(`/countries/${country.code}`);
-  } // end onClickHandler()
+  }
   
   // Destructure the useQuery fetch results
   const { loading, error, data } = useQuery(FETCH_COUNTRIES);
