@@ -50,13 +50,13 @@ function About() {
           <tr style={aboutStyle.developer}>
             <td>Currently learning</td>
             <td>
-              Node.js, Express, RxJS, Redux, Styled-components etc..
+              Node.js, Express.js, RxJS, Redux, Styled-components etc..
             </td>
           </tr>
           <tr style={aboutStyle.developer}>
             <td>Availability for Hire</td>
             <td>
-              IMMEDIATE
+              IMMEDIATELY
             </td>
           </tr>
           <tr style={aboutStyle.developer}>
@@ -81,8 +81,8 @@ function About() {
           <tr style={aboutStyle.project}>
             <td>Data Sources</td>
             <td>
-              <a href="https://countries.trevorblades.com/" target="_blank">Trevorblades</a>,
-              <a href="https://www.countryflags.io/" target="_blank"> Countryflags</a>
+              <a href="https://countries.trevorblades.com/" target="_blank" rel="noopener noreferrer">Trevorblades</a>,
+              <a href="https://www.countryflags.io/" target="_blank" rel="noopener noreferrer"> Countryflags</a>
               </td>
           </tr>
         </tbody>

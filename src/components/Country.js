@@ -1,9 +1,10 @@
 import React, { Fragment } from 'react';
 import { gql } from 'apollo-boost';
 import { useQuery } from '@apollo/react-hooks';
-import { flagBaseUrl, flagStyle } from '../assets/flags';
+import { flagBaseUrl, flagStyle } from '../utilities/flags';
 import Error from '../components/Error';
 import Loading from './Loading';
+import ButtonLinks from '../utilities/ButtonLinks';
 
 function GetCountry({ match }) {
 
@@ -42,7 +43,6 @@ function GetCountry({ match }) {
   
   /* 
   // For debugging
-  
   console.log(`Country Code: ${code}`)
   console.log(match);
   console.log(data); 
@@ -50,13 +50,13 @@ function GetCountry({ match }) {
 
   if (loading) return <Loading />;
 
-  if (error) return <Error />;
+  if (error) return <Error error={error}/>;
   
   // Pull out country from data object
   const country = data.country;
   
   // console.log(typeof country); // For debugging
-  console.log(country); // For debugging
+  // console.log(country); // For debugging
   
   // Grab the country code of current country & set up flag
   let flagCode = code;
@@ -100,8 +100,8 @@ function GetCountry({ match }) {
                 <th scope="row">{country.emoji}</th>
               </tr>
               <tr>
-                <td>EmojiU</td>
-                <th scope="row">{country.emojiU}</th>
+                <td>Continent</td>
+                <th scope="row">{country.continent.name}</th>
               </tr>
             </tbody>
           </table>
@@ -110,7 +110,8 @@ function GetCountry({ match }) {
               src={shinyFlag} 
               alt={`${country.name} flag`}/>
           </div>
-        </div>
+        </div><hr/>
+        <ButtonLinks />
       </div>
     </Fragment>
 

@@ -5,6 +5,7 @@ import { withRouter } from 'react-router-dom'
 import Loading from '../components/Loading';
 import Error from '../components/Error';
 import { flagBaseUrl, flagStyle, flagSize } from '../utilities/flags';
+import { style } from '../utilities/ButtonLinks';
 
 const FETCH_COUNTRIES = gql`
 {
@@ -53,7 +54,12 @@ function GetCountries(props) {
  */
 
   return (
-    <div >
+    <>
+      <div className="content-area">
+        <div id="top" className="content-area" style={{margin: '0 0 5px 0'}}>
+          <a href="#bottom"><button style={style.buttonStyle}>Jump to Bottom</button></a>
+        </div>      
+      </div>
       <table 
         className="table table-striped table-dark tabl-row"
         >
@@ -110,7 +116,12 @@ function GetCountries(props) {
           }) // end countries.map
         } 
       </table>
-    </div>
+      <div className="content-area">
+        <div id="bottom"style={{margin: '-10px 0 5px 0'}}>
+          <a href="#top"><button style={style.buttonStyle}>Jump to Top</button></a>
+        </div>
+      </div>
+    </>
 
   ); // end return
 
