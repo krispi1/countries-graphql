@@ -1,11 +1,11 @@
 import React from 'react'
 
-export default function Error(error) {
+export default function Error(props) {
   return (
-    <div>
+    <div className="content-area">
       <p>
-        <span style={{ color: 'red' }}>Error: </span>
-        ${error.message} {console.log(error)} </p>;
+        <span style={{ color: 'red', fontSize: '1.9em' }}>Error: </span>
+        {props.error.message} {console.log(props.error.message)} </p>
     </div>
   )
 }
