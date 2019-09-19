@@ -55,6 +55,8 @@ function App() {
             <Route exact path="/countries/:code" component={GetCountry} />
             <Route component={Page404} />
           </Switch>
+
+          
         </div>
       </Router>
     </ApolloProvider>

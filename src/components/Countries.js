@@ -2,9 +2,9 @@ import React from 'react';
 import { gql } from 'apollo-boost'
 import { useQuery } from '@apollo/react-hooks';
 import { withRouter } from 'react-router-dom'
-import Loading from './Loading';
+import Loading from '../components/Loading';
 import Error from '../components/Error';
-import { flagBaseUrl, flagStyle, flagSize } from '../assets/flags';
+import { flagBaseUrl, flagStyle, flagSize } from '../utilities/flags';
 
 const FETCH_COUNTRIES = gql`
 {
@@ -40,7 +40,7 @@ function GetCountries(props) {
   
   if (loading) return <Loading />;
 
-  if (error) return <Error />;
+  if (error) return <Error error={error} />;
 
   // Pull out countries array from the data object
   const countries = data.countries;  

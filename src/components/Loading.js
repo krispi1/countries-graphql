@@ -1,5 +1,5 @@
 import React from 'react'
-import spinner from '../assets/rotatingGlobe200w.webp';
+import spinner from '../utilities/rotatingGlobe200w.webp';
 
 export const loadingStyle = {
   display: 'flex',
