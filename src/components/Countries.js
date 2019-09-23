@@ -26,7 +26,7 @@ const FETCH_COUNTRIES = gql`
 }
 `; // end FETCH_COUNTRIES query
 
-function GetCountries(props) {
+function Countries(props) {
   
   const { history } = props;
   // console.log(history); // For debugging
@@ -88,7 +88,7 @@ function GetCountries(props) {
             return (
               <tbody key={`${country.code}${country.name}`}>
               
-                <tr onClick={ () => onClickHandler(country)}>
+                <tr onClick={() => onClickHandler(country)}>
               
                   <td>{country.name}</td>
                   <td>{country.code}</td>
@@ -125,10 +125,9 @@ function GetCountries(props) {
 
   ); // end return
 
-} // end GetCountries
+} // end Countries
 
-/* return <Link to={`/countries/${country.code.toUpperCase()}`}> </Link> */
-export default withRouter(GetCountries);
+export default withRouter(Countries);
 
 /** Countries Instructions
  * 

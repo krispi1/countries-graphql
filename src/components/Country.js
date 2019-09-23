@@ -6,7 +6,7 @@ import Error from '../components/Error';
 import Loading from './Loading';
 import ButtonLinks from '../utilities/ButtonLinks';
 
-function GetCountry({ match }) {
+function Country({ match }) {
 
   let code = match.params.code.toUpperCase();
   //console.log(code); // For debugging
@@ -68,7 +68,9 @@ function GetCountry({ match }) {
 
   return (
     <Fragment>
-      <div className="content-area">
+      {
+        country ? 
+        <div className="content-area">
         <h2><strong>{`${country.name.toUpperCase()}`}</strong></h2>
         <div><img 
           src={flagUrl} 
@@ -112,14 +114,21 @@ function GetCountry({ match }) {
           </div>
         </div><hr/>
         <ButtonLinks />
-      </div>
+      </div> : 
+        <div className="content-area">
+          <br/>
+          <span style={{ color: 'red', fontSize: '1.9em' }}>Error: that's not a valid country code.</span><br/><br/>
+          <ButtonLinks />
+        </div>
+      }
+      
     </Fragment>
 
   ) // end return
   
-} // end GetCountry()
+} // end Country()
 
-export default GetCountry;
+export default Country;
 
 /** Country Instructions
  * 
@@ -139,5 +148,5 @@ export default GetCountry;
   name: "Kenya"
   native: "Kenya"
   phone: "254" 
-  
+
   */

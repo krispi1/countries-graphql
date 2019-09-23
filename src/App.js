@@ -7,8 +7,9 @@ import './App.css';
 import Nav from './components/Nav';
 import About from './components/About';
 import Home from './components/Home';
-import GetCountries from './components/Countries';
-import GetCountry from './components/Country';
+import Countries from './components/Countries';
+import Country from './components/Country';
+import ButtonLinks from './utilities/ButtonLinks';
 
 const client = new ApolloClient({
   uri: 'https://countries.trevorblades.com/'
@@ -51,8 +52,8 @@ function App() {
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/about" component={About} />
-            <Route exact path="/countries" component={GetCountries} />
-            <Route exact path="/countries/:code" component={GetCountry} />
+            <Route exact path="/countries" component={Countries} />
+            <Route exact path="/countries/:code" component={Country} />
             <Route component={Page404} />
           </Switch>
         </div>
@@ -69,7 +70,9 @@ function Page404({ location }) {
     fontSize: '2.9em'
   }
   return <div className="content-area">
-    <h2 style={style404}>Sorry, we couldn't find the page you requested:<br /> <code>{location.pathname}</code></h2>
+    <h2 style={style404}>Sorry, we couldn't find the page you requested:<br /> 
+    <code>{location.pathname}</code></h2><br/>
+    <ButtonLinks />
   </div>
 }
 
