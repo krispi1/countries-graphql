@@ -27,3 +27,4 @@ You will also see any lint errors in the console.
 #### Some learning resources
 1. [Getting started with GraphQL](https://www.apollographql.com/docs/react/essentials/get-started/)
 2. [Modular CSS with React](https://medium.com/@pioul/modular-css-with-react-61638ae9ea3e#.re1pdcz87)
+3. [Upgrading to React Router v4](https://www.freecodecamp.org/news/a-guide-to-upgrading-to-react-router-4/)
