@@ -32,7 +32,7 @@ function Countries(props) {
   // console.log(history); // For debugging
   
   // Navigate to a given country's page upon clicking on it
-  const onClickHandler = function (country) {
+  const onClickHandler = country => {
     history.push(`/countries/${country.code}`);
   }
   

@@ -3,9 +3,6 @@ import { Link } from 'react-router-dom';
 import { style } from '../utilities/ButtonLinks';
 
 const aboutStyle = {
-  developer: {
-    backgroundColor: '#fbe8ff'
-  },
   project: {
     backgroundColor: '#bfbfbf'
   }
