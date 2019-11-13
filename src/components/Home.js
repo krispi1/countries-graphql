@@ -33,7 +33,10 @@ const FETCH_COUNTRIES = gql`
     },
     continent {
       name,
-      code
+      code,
+      countries {
+        name
+      }
     }
   }
 }
@@ -85,7 +88,7 @@ export default function Home() {
 
   return (
     <div className="content-area">
-      <h2>Scoutbase Frontend Siele</h2>
+      <h2>Countries Frontend Siele</h2>
 
       <div>
         <img 
@@ -100,7 +103,11 @@ export default function Home() {
           alt={`${country.name} flag`}/>
       </div> 
       <p>{`${country.continent.code} `}<span style={style.smallSpan}>|</span>{` ${country.continent.name}`}</p>
-
+      <p>
+        <small>
+          Countries in {country.continent.name}: <strong>{country.continent.countries.length}</strong>
+        </small>
+      </p>  
       <hr />
       <ButtonLinks />
     </div>

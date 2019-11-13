@@ -8,18 +8,14 @@ const aboutStyle = {
   },
   project: {
     backgroundColor: '#bfbfbf'
-  },
-  devLink: {
-    fontSize: '1.4em'
-  }, 
+  }
 }
 
 function About() {
   return (
     <div className="content-area">
-      <h3>About Scoutbase Frontend Siele</h3>
-      <p>Scoutbase Frontend Siele is an assessment for 
-      <a href="https://scoutbase.com" target="_blank" rel="noopener noreferrer"> Scoutbase</a></p>
+      <h3>About Countries Frontend Siele</h3>
+      <p>A demo of how to consume data on a GraphQL backend</p>
       <table className="table table-bordered">
         <thead className="thead-dark">
           <tr>
@@ -28,48 +24,6 @@ function About() {
           </tr>
         </thead>
         <tbody>
-          <tr style={aboutStyle.developer}>
-            <td>Developer</td>
-            <td style={aboutStyle.devLink}>
-              <a href="https://github.com/krispi1" target="_blank" rel="noopener noreferrer">
-                  GEOFFREY SIELE</a>
-            </td>
-          </tr>
-          <tr style={aboutStyle.developer}>
-            <td>Developer Contacts</td>
-            <td>
-              +254723921526, sielekrisp@gmail.com
-            </td>
-          </tr>
-          <tr style={aboutStyle.developer}>
-            <td>Developer Toolbelt</td>
-            <td>
-              Core JavaScript, Angular, React, HTML5, CSS3
-            </td>
-          </tr>
-          <tr style={aboutStyle.developer}>
-            <td>Currently learning</td>
-            <td>
-              Node.js, Express.js, RxJS, Redux, Styled-components etc..
-            </td>
-          </tr>
-          <tr style={aboutStyle.developer}>
-            <td>Availability for Hire</td>
-            <td>
-              IMMEDIATELY
-            </td>
-          </tr>
-          <tr style={aboutStyle.developer}>
-            <td>Country, City, Timezone</td>
-            <td>Kenya, Nairobi, UTC+3</td>
-          </tr>
-          <tr style={aboutStyle.developer}>
-            <td>Attitude</td>
-            <td>Front End Developer with a desire to serve well, 
-              work with others, share knowledge, and learn more skills 
-              including backend, AI, ML, IoT, etc..
-            </td>
-          </tr>
           <tr style={aboutStyle.project}>
             <td>Tools Used</td>
             <td>JavaScript, React, CSS, HTML, Bootstrap</td>

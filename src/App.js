@@ -77,31 +77,3 @@ function Page404({ location }) {
 }
 
 export default App;
-
-/** Scoutbase Frontend Instructions 
-
-# Front-end task of Code Challenge for Scoutbase
-
-This task is for demonstrating your understanding of HTML, CSS, Javascript, React & related libraries.
-
-If you’re doing the front-end only, you must use the https://countries.trevorblades.com endpoint for GraphQL API.
-
-Preferred libraries:
-  1. `styled-components` for styling ------used Bootstrap
-  2. `apollo-client` for consuming GraphQL API ------completed
-  3. `react-router` or any alternative to implement routing ------completed
-
-Instructions:
-
-1. Create a `create-react-app` repo. ------completed
-2. Add a router with routes:
-  - `/` - for displaying basic links for the other routes ------completed
-  - `/countries` - for requesting GraphQL API and rendering the list ------completed
-  - `/countries/(:code)` - for requesting GraphQL API and rendering the properties of a continent ------completed
-3. Design is totally by you.
-4. Countries list at `/countries` must contain the list of countries and the languages spoken in that country. ------completed
-   Both in English and native languages. It should also contain the continent it is located in. ------completed
-5. `/countries/(:code)` must render the currency and a area code (phone) of that country. ------completed
-6. Routes must be fully loadable with a direct link. `/countries/CI` must render the page for Ivory Coast, for example. ------completed
-7. End.
-*/

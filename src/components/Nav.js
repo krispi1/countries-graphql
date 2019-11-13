@@ -13,7 +13,7 @@ function Nav() {
       <div className="row">
         <div className="col">
           <Link style={navStyle} to="/">
-            <span className="app-logo">SFS</span>
+            <span className="app-logo">CFS</span>
           </Link>
         </div>
         <div className="nav-links row">

@@ -57,6 +57,7 @@ function Country({ match }) {
   
   // console.log(typeof country); // For debugging
   // console.log(country); // For debugging
+  // console.log(country.continent.countries.length); // For debugging
   
   // Grab the country code of current country & set up flag
   let flagCode = code;
@@ -105,6 +106,10 @@ function Country({ match }) {
                 <td>Continent</td>
                 <th scope="row">{country.continent.name}</th>
               </tr>
+              <tr>
+                <td>Countries in {country.continent.name}</td>
+                <th scope="row">{country.continent.countries.length}</th>
+              </tr>
             </tbody>
           </table>
           <div className="shiny-flag">
@@ -130,14 +135,7 @@ function Country({ match }) {
 
 export default Country;
 
-/** Country Instructions
- * 
- * `/countries/(:code)` must render the currency and the area
- * code (phone) of that country.
- * 
- */
-
-/**Example country
+/**Example country result
 
   code: null
   continent: {code: "AF", name: "Africa", countries: Array(58), __typename: "Continent"}
