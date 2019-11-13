@@ -1,14 +1,14 @@
-# Scoutbase Frontend Siele
+# Coutries Frontend Siele
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ### Clone the project repo
 
-Run `git clone https://github.com/krispi1/scoutbase-frontend-siele.git` in your desired directory
+Run `git clone https://github.com/krispi1/countries-frontend-siele.git` in your desired directory
 
-### Navigate into scoutbase-frontend-siele
+### Navigate into countries-frontend-siele
 
-Run `cd scoutbase-frontend-siele`
+Run `cd countries-frontend-siele`
 
 ### Install dependencies
 
@@ -28,3 +28,4 @@ You will also see any lint errors in the console.
 1. [Getting started with GraphQL](https://www.apollographql.com/docs/react/essentials/get-started/)
 2. [Modular CSS with React](https://medium.com/@pioul/modular-css-with-react-61638ae9ea3e#.re1pdcz87)
 3. [Upgrading to React Router v4](https://www.freecodecamp.org/news/a-guide-to-upgrading-to-react-router-4/)
+4. [Change a remote git remote's URL](https://linuxize.com/post/how-to-change-git-remote-url/)
