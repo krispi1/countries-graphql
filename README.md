@@ -13,7 +13,7 @@ Run `cd countries-frontend-siele`
 ### Install dependencies
 
 Run `npm install`
-n
+
 ### Run the application
 
 Run `npm start`
