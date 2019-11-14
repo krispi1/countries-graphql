@@ -1,9 +1,11 @@
 import React, { Fragment } from 'react';
 import { gql } from 'apollo-boost';
 import { useQuery } from '@apollo/react-hooks';
-import { flagBaseUrl, flagStyle } from '../utilities/flags';
-import Error from '../components/Error';
+
+import Error from './Error';
 import Loading from './Loading';
+
+import { flagBaseUrl, flagStyle } from '../utilities/flags';
 import ButtonLinks from '../utilities/ButtonLinks';
 
 function Country({ match }) {
@@ -126,7 +128,6 @@ function Country({ match }) {
           <ButtonLinks />
         </div>
       }
-      
     </Fragment>
 
   ) // end return

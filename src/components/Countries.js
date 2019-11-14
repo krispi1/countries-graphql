@@ -2,8 +2,10 @@ import React from 'react';
 import { gql } from 'apollo-boost'
 import { useQuery } from '@apollo/react-hooks';
 import { withRouter } from 'react-router-dom'
+
 import Loading from '../components/Loading';
 import Error from '../components/Error';
+
 import { flagBaseUrl, flagStyle, flagSize } from '../utilities/flags';
 import { style } from '../utilities/ButtonLinks';
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+
 import { style } from '../utilities/ButtonLinks';
 
 const aboutStyle = {
@@ -45,7 +46,8 @@ function About() {
         <button style={style.buttonStyle}>COUNTRIES</button>
       </Link>    
     </div>
-  );
+
+  ); // end return
 
 } // end About()
 

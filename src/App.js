@@ -3,12 +3,13 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from '@apollo/react-hooks';
 
-import './App.css';
 import Nav from './components/Nav';
 import About from './components/About';
 import Home from './components/Home';
 import Countries from './components/Countries';
 import Country from './components/Country';
+
+import './App.css';
 import ButtonLinks from './utilities/ButtonLinks';
 
 const client = new ApolloClient({
@@ -62,18 +63,20 @@ function App() {
     
   ); // end return
 
-} // end App()
+} // end App
 
 function Page404({ location }) {
   const style404 = {
     marginTop: '30px',
     fontSize: '2.9em'
   }
+
   return <div className="content-area">
     <h2 style={style404}>Sorry, we couldn't find the page you requested:<br /> 
     <code>{location.pathname}</code></h2><br/>
     <ButtonLinks />
   </div>
-}
+
+} // end Page404
 
 export default App;

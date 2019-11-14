@@ -1,8 +1,10 @@
 import React from 'react';
 import { gql } from 'apollo-boost';
 import { useQuery } from '@apollo/react-hooks';
+
 import Loading from './Loading';
-import Error from '../components/Error';
+import Error from './Error';
+
 import { flagBaseUrl, flagStyle } from '../utilities/flags';
 import ButtonLinks from '../utilities/ButtonLinks';
 
@@ -44,6 +46,7 @@ const FETCH_COUNTRIES = gql`
 
 export default function Home() {
 
+  // Destructure results obtained from execution of useQuery 
   const { loading, error, data } = useQuery(FETCH_COUNTRIES);
 
   if (loading) return <Loading />;
@@ -63,11 +66,13 @@ export default function Home() {
   let flagShiny = '';
   let flagSize = '';
 
+  // Produce an index within the range of all countries  
   function genRandomCountry() {
     newIndex = Math.floor(Math.random() * countries.length);
     return newIndex;
   }
 
+  // Generate a random country to display in the home page
   if (newIndex === null || country === null) {
     newIndex = genRandomCountry();
     country = countries[newIndex];
@@ -111,6 +116,7 @@ export default function Home() {
       <hr />
       <ButtonLinks />
     </div>
+
   ) // end return
 
 } // end Home
