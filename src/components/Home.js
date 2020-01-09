@@ -1,10 +1,13 @@
+// Modules
 import React from 'react';
 import { gql } from 'apollo-boost';
 import { useQuery } from '@apollo/react-hooks';
 
+// Components
 import Loading from './Loading';
 import Error from './Error';
 
+// Utils
 import { flagBaseUrl, flagStyle } from '../utilities/flags';
 import ButtonLinks from '../utilities/ButtonLinks';
 
@@ -54,7 +57,6 @@ export default function Home() {
   if (error) return <Error error={error}/>;
   
   const countries = data.countries;
-  // console.log(countries[8]); // For debugging
 
   // Make the following variables available throughout 
   // this Home component
@@ -85,11 +87,6 @@ export default function Home() {
   flagSize = "/64.png";
   flagUrl = `${flagBaseUrl}${flagCode}${flagStyle}${flagSize}`;  
   shinyFlag = `${flagBaseUrl}${flagCode}${flagShiny}${flagSize}`;
-  
-  // For debugging
-  // console.log(flagUrl); 
-  // console.log(`flagCode: ${flagCode}`);
-  // console.log(country);
 
   return (
     <div className="content-area">
@@ -117,6 +114,6 @@ export default function Home() {
       <ButtonLinks />
     </div>
 
-  ) // end return
+  ); // return
 
-} // end Home
+} // Home

@@ -47,8 +47,8 @@ function About() {
       </Link>    
     </div>
 
-  ); // end return
+  ); // return
 
-} // end About()
+} // About
 
 export default About;

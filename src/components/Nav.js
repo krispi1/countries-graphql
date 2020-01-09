@@ -27,8 +27,8 @@ function Nav() {
         </div>
       </div>
     </nav>
-  );
+  ); // return
 
-} // end Nav()
+} // Nav
 
 export default Nav;

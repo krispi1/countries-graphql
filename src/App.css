@@ -4,7 +4,7 @@
   margin: 0 auto;
 }
 
-.tabl-row :hover {
+.table-row :hover {
   color: yellow;
   background-color: black;
 }

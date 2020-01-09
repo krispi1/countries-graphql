@@ -1,17 +1,19 @@
+// Modules
 import React, { Fragment } from 'react';
 import { gql } from 'apollo-boost';
 import { useQuery } from '@apollo/react-hooks';
 
+// Components
 import Error from './Error';
 import Loading from './Loading';
 
+// Utils
 import { flagBaseUrl, flagStyle } from '../utilities/flags';
 import ButtonLinks from '../utilities/ButtonLinks';
 
 function Country({ match }) {
 
   let code = match.params.code.toUpperCase();
-  //console.log(code); // For debugging
 
   // Destructure the useQuery fetch results
   const { loading, error, data } = useQuery(
@@ -41,14 +43,7 @@ function Country({ match }) {
       }
     }
     `
-  );
-  
-  /* 
-  // For debugging
-  console.log(`Country Code: ${code}`)
-  console.log(match);
-  console.log(data); 
-  */
+  ); // query
 
   if (loading) return <Loading />;
 
@@ -57,9 +52,7 @@ function Country({ match }) {
   // Pull out country from data object
   const country = data.country;
   
-  // console.log(typeof country); // For debugging
-  // console.log(country); // For debugging
-  // console.log(country.continent.countries.length); // For debugging
+  // console.log(typeof country);
   
   // Grab the country code of current country & set up flag
   let flagCode = code;
@@ -130,9 +123,9 @@ function Country({ match }) {
       }
     </Fragment>
 
-  ) // end return
+  ) // return
   
-} // end Country()
+} // Country
 
 export default Country;
 

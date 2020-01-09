@@ -1,0 +1,13 @@
+Initial Lighthouse report
+https://googlechrome.github.io/lighthouse/viewer/?psiurl=https%3A%2F%2Fcountries-graphql.herokuapp.com%2F&strategy=mobile&category=performance&category=accessibility&category=best-practices&category=seo&category=pwa&utm_source=lh-chrome-ext
+
+Use production build
+https://reactjs.org/docs/optimizing-performance.html#use-the-production-build
+
+Improve first time load of React app
+https://hackernoon.com/improving-first-time-load-of-a-production-react-app-part-1-of-2-e7494a7c7ab0
+
+Optimize performance
+https://reactjs.org/docs/optimizing-performance.html#use-the-production-build
+
+

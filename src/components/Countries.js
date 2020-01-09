@@ -1,11 +1,14 @@
+// Modules
 import React from 'react';
 import { gql } from 'apollo-boost'
 import { useQuery } from '@apollo/react-hooks';
 import { withRouter } from 'react-router-dom'
 
+// Components
 import Loading from '../components/Loading';
 import Error from '../components/Error';
 
+// Utils
 import { flagBaseUrl, flagStyle, flagSize } from '../utilities/flags';
 import { style } from '../utilities/ButtonLinks';
 
@@ -31,7 +34,6 @@ const FETCH_COUNTRIES = gql`
 function Countries(props) {
   
   const { history } = props;
-  // console.log(history); // For debugging
   
   // Navigate to a given country's page upon clicking on it
   const onClickHandler = country => {
@@ -47,13 +49,6 @@ function Countries(props) {
 
   // Pull out countries array from the data object
   const countries = data.countries;  
-  
-  /* // For debugging
-  console.log(typeof countries);
-  console.log(`-------countries-------`);
-  console.log(countries[0]); // Inspect first country
-  console.log(`-------countries-------`);
- */
 
   return (
     <>
@@ -63,7 +58,7 @@ function Countries(props) {
         </div>      
       </div>
       <table 
-        className="table table-striped table-dark tabl-row"
+        className="table table-striped table-dark table-row"
         >
         <thead className="table-head">
           <tr>
@@ -113,9 +108,9 @@ function Countries(props) {
                 </tr>
               </tbody>
 
-            )// end return
+            ) // return
 
-          }) // end countries.map
+          }) // countries.map
         } 
       </table>
       <div className="content-area">
@@ -125,8 +120,8 @@ function Countries(props) {
       </div>
     </>
 
-  ); // end return
+  ); // return
 
-} // end Countries
+} // Countries
 
 export default withRouter(Countries);

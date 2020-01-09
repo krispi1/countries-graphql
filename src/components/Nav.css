@@ -1,27 +1,30 @@
 .app-logo {
-    font-weight: bold;
-    vertical-align: middle;
-    font-size: 50px;
-    margin: 0 30px;
+  font-weight: bold;
+  vertical-align: middle;
+  font-size: 50px;
+  margin: 0 13px;
 }
 
 nav {
-    display: flex;
-    flex-direction: column;
-    background: rgb(70, 79, 82);
-    width: 100%;
-    margin-bottom: 5px;
+  padding-right: 40px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  background: rgb(70, 79, 82);
+  width: 100%;
+  margin-bottom: 5px;
 }
 
 .nav-links {
-    list-style-type: none;
-    width: 50%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+  list-style-type: none;
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .nav-links-item {
-    font-size: 1em;
-    margin-top: 10px;
+  font-size: 1em;
+  margin-top: 10px;
 }

@@ -11,6 +11,9 @@
 # production
 /build
 
+# file
+./countries-graphql.herokuapp.com.txt
+
 # misc
 .DS_Store
 .env.local
