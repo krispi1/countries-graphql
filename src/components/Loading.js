@@ -17,7 +17,7 @@ export const loadingStyle = {
 export default function Loading() {
   return (
     <div style={loadingStyle}>
-      <img style={{ width: "20%", height: "200px" }} src={spinner} alt="Loading Spinner" />
+      <img style={{ width: "20%", height: "400px" }} src={spinner} alt="Loading Spinner" />
       <br /><br />
       Loading....<br />
     </div>
