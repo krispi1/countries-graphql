@@ -12,7 +12,7 @@
 /build
 
 # file
-./countries-graphql.herokuapp.com.txt
+countries-graphql.herokuapp.com.txt
 
 # misc
 .DS_Store
