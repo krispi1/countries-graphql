@@ -90,7 +90,7 @@ export default function Home() {
 
   return (
     <div className="content-area">
-      <h2>Countries Frontend Siele</h2>
+      <h2>Countries GraphQL</h2>
 
       <div>
         <img 
