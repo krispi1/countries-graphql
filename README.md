@@ -1,4 +1,4 @@
-# Countries Frontend Siele
+# Countries-GraphQL
 
 ### Live demo
 [countries-graphql](https://countries-graphql.herokuapp.com/)
