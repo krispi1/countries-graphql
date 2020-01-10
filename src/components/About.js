@@ -12,7 +12,7 @@ const aboutStyle = {
 function About() {
   return (
     <div className="content-area">
-      <h3>About Countries Frontend Siele</h3>
+      <h3>About Countries GraphQL</h3>
       <p>A demo of how to consume data on a GraphQL backend</p>
       <table className="table table-bordered">
         <thead className="thead-dark">
@@ -24,7 +24,7 @@ function About() {
         <tbody>
           <tr style={aboutStyle.project}>
             <td>Tools Used</td>
-            <td>JavaScript, React, CSS, HTML, Bootstrap</td>
+            <td>JavaScript, React, CSS, HTML, Bootstrap, GraphQL</td>
           </tr>
           <tr style={aboutStyle.project}>
             <td>Data Handling</td>

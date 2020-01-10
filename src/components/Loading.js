@@ -2,24 +2,30 @@ import React from 'react'
 
 import spinner from '../utilities/rotatingGlobe200w.webp';
 
-export const loadingStyle = {
+const loadingStyle = {
   display: 'flex',
   justifyContent: 'space-around',
   backgroundColor: 'black',
   margin: '0 auto',
   marginTop: '30px',
   color: 'cyan',
-  fontSize: '1.2em',
+  fontSize: '0.9em',
   height: '50%',
-  width: '80%',
+  width: '50%',
 };
 
 export default function Loading() {
   return (
     <div style={loadingStyle}>
-      <img style={{ width: "50%", height: "300px" }} src={spinner} alt="Loading Spinner" />
+      <img src={spinner} alt="Loading Spinner" />
       <br /><br />
-      Loading....<br />
+      <span 
+        style={
+          { 
+            marginTop: "70px",
+            marginLeft: "-50px" 
+          }
+        }>Loading....</span><br />
     </div>
   );
 }
