@@ -7,11 +7,11 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ### Clone the project repo
 
-Run `git clone https://github.com/krispi1/countries-frontend-siele.git` in your desired directory
+Run `git clone https://github.com/krispi1/countries-graphql.git` in your desired directory
 
-### Navigate into countries-frontend-siele
+### Navigate into countries-graphql
 
-Run `cd countries-frontend-siele`
+Run `cd countries-graphql`
 
 ### Install dependencies
 
