@@ -23,6 +23,10 @@ function About() {
         </thead>
         <tbody>
           <tr style={aboutStyle.project}>
+            <td>Countries GraphQL Code</td>
+            <td><a href="https://github.com/krispi1/countries-graphql" target="_blank" rel="noopener noreferrer">Countries GraphQL on GitHub</a></td>
+          </tr>
+          <tr style={aboutStyle.project}>
             <td>Tools Used</td>
             <td>JavaScript, React, CSS, HTML, Bootstrap, GraphQL</td>
           </tr>

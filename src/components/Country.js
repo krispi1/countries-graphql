@@ -11,7 +11,7 @@ import Loading from './Loading';
 import { flagBaseUrl, flagStyle } from '../utilities/flags';
 import ButtonLinks from '../utilities/ButtonLinks';
 
-function Country({ match }) {
+export default function Country({ match }) {
 
   let code = match.params.code.toUpperCase();
 
@@ -122,12 +122,9 @@ function Country({ match }) {
         </div>
       }
     </Fragment>
-
   ) // return
-  
 } // Country
 
-export default Country;
 
 /**Example country result
 

@@ -90,7 +90,7 @@ export default function Home() {
 
   return (
     <div className="content-area">
-      <h2>Countries GraphQL</h2>
+      <h2>Countries GraphQL</h2><hr />
 
       <div>
         <img 
@@ -113,7 +113,5 @@ export default function Home() {
       <hr />
       <ButtonLinks />
     </div>
-
   ); // return
-
 } // Home

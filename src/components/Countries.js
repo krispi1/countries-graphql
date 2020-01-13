@@ -107,9 +107,7 @@ function Countries(props) {
                 
                 </tr>
               </tbody>
-
             ) // return
-
           }) // countries.map
         } 
       </table>
@@ -119,9 +117,7 @@ function Countries(props) {
         </div>
       </div>
     </>
-
   ); // return
-
 } // Countries
 
 export default withRouter(Countries);
