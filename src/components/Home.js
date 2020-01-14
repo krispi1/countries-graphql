@@ -49,6 +49,7 @@ const FETCH_COUNTRIES = gql`
 
 export default function Home() {
   console.log("Rendering Home...");
+  
   let countries;
   countries = JSON.parse(window.localStorage.getItem("countries"));
   //console.log(countries);

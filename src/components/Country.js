@@ -12,6 +12,7 @@ import { flagBaseUrl, flagStyle } from '../utilities/flags';
 import ButtonLinks from '../utilities/ButtonLinks';
 
 export default function Country({ match }) {
+  console.log("Rendering Country..");
 
   let code = match.params.code.toUpperCase();
 

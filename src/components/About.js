@@ -10,6 +10,8 @@ const aboutStyle = {
 }
 
 function About() {
+  console.log("Rendering About..");
+
   return (
     <div className="content-area">
       <h3>About Countries GraphQL</h3>

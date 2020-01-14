@@ -32,6 +32,7 @@ const FETCH_COUNTRIES = gql`
 `; // end FETCH_COUNTRIES query
 
 function Countries(props) {
+  console.log("Rendering Countries..");
   
   const { history } = props;
   

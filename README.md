@@ -36,4 +36,5 @@ You will also see any lint errors in the console.
 6. [Code splitting CRA](https://create-react-app.dev/docs/code-splitting)
 
 #### Lighthouse Performance Reports
-1. [First - Pre-optimization](https://googlechrome.github.io/lighthouse/viewer/?psiurl=https%3A%2F%2Fcountries-graphql.herokuapp.com%2F&strategy=mobile&category=performance&category=accessibility&category=best-practices&category=seo&category=pwa&utm_source=lh-chrome-ext)
+1. [First - 37% performance - Pre-optimization](https://googlechrome.github.io/lighthouse/viewer/?psiurl=https%3A%2F%2Fcountries-graphql.herokuapp.com%2F&strategy=mobile&category=performance&category=accessibility&category=best-practices&category=seo&category=pwa&utm_source=lh-chrome-ext)
+2. [Second - 44% performance - localStorage for subsequent requests](https://googlechrome.github.io/lighthouse/viewer/?psiurl=https%3A%2F%2Fcountries-graphql.herokuapp.com%2F&strategy=mobile&category=performance&category=accessibility&category=best-practices&category=seo&category=pwa&utm_source=lh-chrome-ext)

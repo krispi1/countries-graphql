@@ -21,6 +21,8 @@ const client = new ApolloClient({
 });
 
 function App() {
+  console.log("Rendering App..");
+  
   return (
     <ApolloProvider client={client}>
       <Router>
