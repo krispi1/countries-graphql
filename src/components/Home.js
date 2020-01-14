@@ -48,15 +48,31 @@ const FETCH_COUNTRIES = gql`
 `; // end FETCH_COUNTRIES query
 
 export default function Home() {
+  console.log("Rendering Home...");
+  let countries;
+  countries = JSON.parse(window.localStorage.getItem("countries"));
+  //console.log(countries);
 
   // Destructure results obtained from execution of useQuery 
   const { loading, error, data } = useQuery(FETCH_COUNTRIES);
+  console.log("loading -->", loading);
+  console.log("error -->", error);
+  console.log("data -->", data);
 
-  if (loading) return <Loading />;
-
-  if (error) return <Error error={error}/>;
-  
-  const countries = data.countries;
+  if (countries) console.log("Retrieved countries from localStorage");
+  else if (loading) return <Loading />;
+  else if (error) return <Error error={error}/>;
+  else {
+    if (data) {
+      console.log("cData -->", data.countries);
+      console.log("cDataL -->", data.countries.length);
+      countries = data.countries;
+      window.localStorage.setItem("countries", JSON.stringify(countries));
+      console.log("Store countries in localStorage");
+      console.log("cLength -->", countries.length);
+    }
+  }
+  // window.localStorage.setItem("countries", JSON.stringify(countries));
 
   // Make the following variables available throughout 
   // this Home component
@@ -70,6 +86,8 @@ export default function Home() {
 
   // Produce an index within the range of all countries  
   function genRandomCountry() {
+    console.log("Countries length: ", countries.length);
+    console.log("Countries type: ", typeof countries);
     newIndex = Math.floor(Math.random() * countries.length);
     return newIndex;
   }
@@ -87,7 +105,7 @@ export default function Home() {
   flagSize = "/64.png";
   flagUrl = `${flagBaseUrl}${flagCode}${flagStyle}${flagSize}`;  
   shinyFlag = `${flagBaseUrl}${flagCode}${flagShiny}${flagSize}`;
-
+  
   return (
     <div className="content-area">
       <h2>Countries GraphQL</h2><hr />
@@ -115,3 +133,41 @@ export default function Home() {
     </div>
   ); // return
 } // Home
+
+
+
+/****************************************************** */
+
+// https://github.com/trojanowski/react-apollo-hooks/issues/158
+
+/* 
+use the returned data as it is like below:
+
+const { loading, data, error } = useQuery(SOME_QUERY)
+
+if (loading) return <Loader />
+if (error) return <Error />
+
+// safe to assume data now exist and you can use data.
+const mutatedData = React.useMemo(() => {
+  // if you want to mutate the data for some reason
+  return data
+}, [data])
+
+return <YourComponent data={mutatedData}  /> */
+
+/***********************or************************* */
+/* 
+But if you must store the returned data, could do below:
+
+const { loading, data, error } = useQuery(SOME_QUERY)
+const [state, setState] = React.useState([])
+
+React.useEffect(() => {
+  // do some checking here to ensure data exist
+  if (data) {
+    // mutate data if you need to
+    setState(data)
+  }
+}, [data]) */
+/****************************************************** */

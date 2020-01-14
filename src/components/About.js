@@ -50,9 +50,7 @@ function About() {
         <button style={style.buttonStyle}>COUNTRIES</button>
       </Link>    
     </div>
-
   ); // return
-
 } // About
 
 export default About;

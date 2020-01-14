@@ -11,3 +11,36 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+/* Nav styles */
+.app-logo {
+  font-weight: bold;
+  vertical-align: middle;
+  font-size: 50px;
+  margin: 0 13px;
+}
+
+nav {
+  padding-right: 40px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  background: rgb(70, 79, 82);
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+.nav-links {
+  list-style-type: none;
+  width: 50%;
+  justify-content: space-around;
+  align-items: center;
+  margin-left: 15px;
+}
+
+.nav-links-item {
+  font-size: 1em;
+  margin-top: 10px;
+}
+
+/* end Nav styles */

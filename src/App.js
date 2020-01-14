@@ -20,34 +20,6 @@ const client = new ApolloClient({
   uri: "https://countries.trevorblades.com/"
 });
 
-// Trial data fetch
-/* client
-  .query({
-    query: gql`
-      query {
-        countries {
-          name,
-          code,
-          native,
-          phone,
-          currency,
-          languages {
-            name,
-            native
-          },
-          continent {
-            name
-          }
-        }
-      }
-    `
-  })
-  .then(result => {
-    console.log(`result: ${result}`);
-    let countries = result.data.countries;
-    console.log(countries);
-  }) */
-
 function App() {
   return (
     <ApolloProvider client={client}>

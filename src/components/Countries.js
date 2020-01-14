@@ -37,7 +37,7 @@ function Countries(props) {
   
   // Navigate to a given country's page upon clicking on it
   const onClickHandler = country => {
-    history.push(`/countries/${country.code}`);
+    history.push(`/countries/${(country.code).toLowerCase()}`);
   }
   
   // Destructure the useQuery fetch results
@@ -75,7 +75,7 @@ function Countries(props) {
         
         {
           // Loop through all the countries
-          countries.map(country => {
+          countries && countries.map(country => {
  
             // Grab the country code of each country
             let flagCode = country.code;

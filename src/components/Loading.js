@@ -1,11 +1,12 @@
 import React from 'react'
 
-import spinner from '../utilities/fidget-spinner-loading.gif';
+import spinner from '../utilities/tiny_loader.gif';
 
 const loadingStyle = {
   display: 'flex',
   justifyContent: 'space-around',
-  margin: '0 auto'
+  top: '50%',
+  left: '50%',
 };
 
 export default function Loading() {
