@@ -21,11 +21,11 @@ function Nav() {
 
         <div className="nav-links row">
           <Link style={navStyle} to="/countries">
-            <li className="nav-links-item">Countries</li>
+            <div className="nav-links-item">Countries</div>
           </Link>
 
           <Link style={navStyle} to="/about">
-            <li className="nav-links-item">About</li>
+            <div className="nav-links-item">About</div>
           </Link>
         </div>
 
